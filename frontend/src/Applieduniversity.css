@@ -1,0 +1,23 @@
+.applied__university{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+  height: 100vh;
+}
+.card__value{
+ width:600px;
+ background-color:skyblue;
+ padding:10px 10px;
+}
+
+.university__header{
+    
+    font-family: sans-serif;
+    font-weight: 500;
+    background-color: wheat;
+}
+.back__tostart{
+    margin-top:20px;
+}

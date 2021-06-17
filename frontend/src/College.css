@@ -1,0 +1,70 @@
+.college{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ background-color: cornflowerblue;
+ height:100vh;
+
+}
+label{
+    display: flex;
+    text-align: center;
+
+}
+.form__card{
+    width: 330px;
+    height: 440px;
+    margin-top:50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    padding: 10px;
+    text-align: center;
+    color:black;
+    font-family: sans-serif;
+    background-color: wheat;
+}
+.select{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.gpa{
+    margin-bottom: 5px;
+
+}
+.todo__card{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+
+}
+.gmail{
+    margin-bottom: 10px;
+}
+.submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.formSubmit{
+    margin-top: 10px;
+}
+.emailsent{
+color:black;
+font-size: larger;
+font-family: sans-serif;
+font-weight: 500;
+}
+.college__header{
+    display: flex;
+    align-items: center;
+}
+.applied__button{
+    position: absolute;
+    top:10px;
+    right:0px;
+}

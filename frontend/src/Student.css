@@ -1,0 +1,31 @@
+.student{
+    display: flex;
+    flex-direction: column;
+}
+
+.select_college{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.student__Info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:cornflowerblue;
+    margin-top:50px;
+}
+.student__heading{
+    font-family: sans-serif;
+    padding: 30px;
+    color:black;
+}
+
+.apply__higher{
+    position:absolute;
+    top:35px;
+    right: 0px;
+    
+}
