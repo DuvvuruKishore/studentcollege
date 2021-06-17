@@ -7,10 +7,18 @@ import College from './collegeschema.js';
 import cors from 'cors';
 import sendEmail from './mail.js';
 import AppliedCollege from './appliedSchema.js';
-
+import Pusher from 'pusher';
 
 const app=express();
 const port=process.env.PORT||5000;
+
+const pusher = new Pusher({
+    appId: "1220994",
+    key: "9380f96f344ea8a3e0d7",
+    secret: "6198a45c093c20513088",
+    cluster: "ap2",
+    useTLS: true
+  });
 
 app.use(express.json());
 app.use(cors());
@@ -24,6 +32,31 @@ mongoose.connect(process.env.MONGO_URL,{
 }).catch((error)=>{
     console.log(error);
 })
+
+const db=mongoose.connection;
+
+db.once("open",()=>{
+    console.log("db connected");
+
+const msgCollection=db.collection('appliedcolleges');
+const changeStream=msgCollection.watch();
+
+changeStream.on("change",(change)=>{
+    console.log("a change occured",change);
+
+    if(change.operationType==="insert"){
+        const messageDetails=change.fullDocument;
+        pusher.trigger("messages","inserted",{
+            college:messageDetails.college,
+            department:messageDetails.department,
+            gpa:messageDetails.gpa,
+        });
+    }else{
+        console.log("error pusher");
+    }
+
+});
+});
 
 
 app.get('/hi',(req,res)=>{

@@ -63,6 +63,24 @@ function College() {
             axios.post('api/sendmail',taskDetails);
           
         }
+
+        const reset=(e)=>{
+          e.preventDefault();
+        setCollege('college');
+        setDepartment('department');
+        setGpa('');
+        setMail('');
+          /*let taskDetails={
+            college:college,
+            department:department,
+            gpa:gpa,
+            mail:mail,
+          }*/
+          
+        
+      }
+
+
     return (
     
         <div className="college">
@@ -120,12 +138,19 @@ function College() {
   <div className="submit">
   <TextField id="outlined-basic" placeholder="gmail" variant="outlined" 
   type="email" value={mail} onChange={(e)=>setMail(e.target.value)}/>
-  <div className="formSubmit">  
+  
+  <div className="formSubmit">
   <Button onClick={(e)=>{addTodo(e)}} variant="contained" className="higher__button" color="primary">
   submit
 </Button>
+
+
+<Button onClick={(e)=>{reset(e)}} variant="contained" className="higher__button" color="primary">
+Reset
+</Button>
 </div>
 </div>
+
   </form>
   </Card>
   <p className="emailsent">email will be sent once you submit the form</p>
