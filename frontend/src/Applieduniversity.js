@@ -41,8 +41,8 @@ console.log(university);
         <div className="applied__university">
           <h1 className="university__header">universities</h1>  
         {university.map((data)=>(
-          <div className="card__value">
-              <Card key={data._id} >
+          <div className="card__value" key={data._id}>
+              <Card >
               <p>applied for {data.college} for department of {data.department}</p>
     
               

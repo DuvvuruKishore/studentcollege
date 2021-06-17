@@ -5,7 +5,6 @@ import Select from '@material-ui/core/Select';
 import axios from './axios';
 import Card from '@material-ui/core/Card';
 import { Button } from '@material-ui/core';
-import Todo from './Todo';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom';
 
@@ -16,7 +15,6 @@ function College() {
     const [department,setDepartment]=useState('department');
     const [higher,setHigher]=useState([]);
     const [gpa,setGpa]=useState('');
-    const [todo,setTodo]=useState([]);
     const [mail,setMail]=useState('');
 
     useEffect(()=>{
@@ -102,7 +100,9 @@ function College() {
       id="demo-simple-select-filled" className="select" onChange={CollegeChange} value={college}>
       <MenuItem value="college">college</MenuItem>
     {higher.map((data)=>(
-        <MenuItem value={data.college}>{data.college}</MenuItem>
+  
+        <MenuItem key={data._id} value={data.college}>{data.college}</MenuItem>
+      
     ))}
   </Select>
 
@@ -116,7 +116,9 @@ function College() {
       id="demo-simple-select-filled" className="select" onChange={DepartmentChange} value={department}>
       <MenuItem value="department">department</MenuItem>
     {higher.map((data)=>(
-        <MenuItem value={data.collegedepartment}>{data.collegedepartment}</MenuItem>
+      
+        <MenuItem key={data._id} value={data.collegedepartment}>{data.collegedepartment}</MenuItem>
+        
     ))}
 
   </Select>

@@ -1,4 +1,5 @@
-
+import dotenv from 'dotenv';
+dotenv.config();
 import mailer from 'nodemailer';
 
 
@@ -27,8 +28,8 @@ const sendEmail = (to, name, type) => {
     const smtpTransport = mailer.createTransport({
         service: "Gmail",
         auth: {
-            user: "duvvurukishore100@gmail.com",
-            pass: "Hacker#001"
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD
         }
     })
 

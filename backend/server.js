@@ -13,12 +13,19 @@ const app=express();
 const port=process.env.PORT||5000;
 
 const pusher = new Pusher({
-    appId: "1220994",
-    key: "9380f96f344ea8a3e0d7",
-    secret: "6198a45c093c20513088",
-    cluster: "ap2",
+    appId: process.env.APPID,
+    key: process.env.KEY,
+    secret: process.env.SECRET,
+    cluster: process.env.CLUSTER,
     useTLS: true
   });
+ /* const pusher = new Pusher({
+    appId: process.env.App_Id,
+    key: process.env.Key,
+    secret: process.env.Secret,
+    cluster:process.env.Cluster,
+    useTLS: true
+  });*/
 
 app.use(express.json());
 app.use(cors());

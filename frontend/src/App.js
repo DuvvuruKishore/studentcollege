@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import College from './College';
 import Student from './Student.js';
 import Applieduniversity from './Applieduniversity';
