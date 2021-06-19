@@ -58,7 +58,7 @@ function College() {
               gpa:gpa,
               mail:mail,
             }
-            axios.post('api/sendmail',taskDetails);
+            axios.post('/api/sendMail',taskDetails);
           
         }
 
@@ -93,7 +93,7 @@ function College() {
  </div>
          </div>
          <Card className="form__card">
-         <form onClick={addTodo}>
+         <form >
          <div className="college__name">
         <label>College Name</label>  
         <Select  labelId="demo-simple-select-filled-label"
